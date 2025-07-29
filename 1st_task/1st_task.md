@@ -1,25 +1,23 @@
-k8s_first task 1/20
+##  LAB
 
-LAB
-    #Create a Ubuntu VM
+### Create a Ubuntu VM
 
-   create  EC2 Instance 
-   connect through ssh-i 
+     create  EC2 Instance 
+     connect through ssh-i 
 
    than 
     
-#Install Docker on VM
-#Start and enable Docker 
+### Install Docker on VM 
 
-  sudo apt -y install docker
-  sudo apt install docker.io
+    sudo apt -y install docker
+    sudo apt install docker.io
 
-#Start and enable docker
-  sudo systemctl start docker
-  sudo systemctl enable docker
+### Start and enable docker
+    sudo systemctl start docker
+    sudo systemctl enable docker
 
-#Once enabled, provide permissions for docker-sock
-  sudo chmod 666 /var/run/docker.sock
+### Once enabled, provide permissions for docker-sock
+    sudo chmod 666 /var/run/docker.sock
 
 Than
 

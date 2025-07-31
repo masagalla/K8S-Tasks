@@ -15,6 +15,7 @@
 kubectl get pods
 kubectl describe pod nginx
 ```
+![preview](Images/1st%20create%20pod_imperatively.png)
 
 ### ✅ **Task 2: Generate YAML and Reuse**
 
@@ -63,6 +64,11 @@ spec:
   - name: nginx
     image: nginx
 ```
+![preview](Images/edit_nginx_yaml2.png)
+![preview](Images/nginx_copy_file3.png)
+
+
+
 **✅ Key Changes Made:**
 
 
@@ -86,6 +92,7 @@ Removed all auto-generated fields:
 kubectl get pods
 kubectl describe pod nginx-new
 ```
+![preview](Images/nginx_copy_pod4.png)
 ### ✅ **Task 3: Apply and Fix This Broken YAML**
 #### Given YAML:
 
@@ -105,6 +112,7 @@ spec:
  ```bash
 kubectl apply -f redis.yaml
 ```
+![preview](Images/redis_broken_yaml.png)
 #### ❌ Expected Error:
 
 ```plaintext
@@ -131,6 +139,7 @@ changes:
   ```yaml
      image: redis
 ```
+
 
 2.**YAML is incomplete** – it's missing the closing elements (spec, containers, etc.).
 
@@ -164,6 +173,8 @@ kubectl get pods
 kubectl describe pod redis
 kubectl logs redis
 ```
+![preview](Images/redi_descrbe6.png)
+![preview](Images/redis_logs.png)
 
 ### 📘 What to Document (Learning & Troubleshooting)
 

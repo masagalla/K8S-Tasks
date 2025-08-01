@@ -19,7 +19,7 @@ To maintain pod availability — if a pod crashes or is deleted, the ReplicaSet 
 ```bash
 kubectl create rs nginx-rs --image=nginx --replicas=3
 ```
-![preview] (Images/create_replicas1.png)
+![preview](images/create_replicas1.png)
 
 *You're getting this error because `ReplicaSet (rs)` does not support the `--image` flag with `kubectl create`.*
 
@@ -29,7 +29,7 @@ kubectl create rs nginx-rs --image=nginx --replicas=3
 ```bash
  kubectl create deployment nginx-deployment --image=nginx --replicas=3
  ```
- ![preview](Images/create_replicas3_2.png)
+ ![preview](images/create_replicas3_2.png)
 
   **Task 2: Update the ReplicaSet YAML to 4 replicas**:
 
@@ -57,8 +57,8 @@ kubectl apply -f nginx-rs.yaml
 ```bash
 kubectl get rs
 ```
-![preview](Images/edit_replicas_file_from3to4.png)
-![preview](Images/replicas_4.png) 
+![preview](images/edit_replicas_file_from3to4.png)
+![preview](images/replicas_4.png) 
 
 ### 🔹 Task 3: Scale to 6 replicas via command line:
 
@@ -76,7 +76,7 @@ kubectl scale rs nginx-rs --replicas=6
 kubectl get rs
 kubectl get pods
 ```
-![preview](Images/replica_scaled_6.png)
+![preview](images/replica_scaled_6.png)
 
 ## 📦 **PART 2: Managing a Deployment**
 
@@ -92,7 +92,7 @@ kubectl create deployment nginx \
 ```
  This will create a file nginx-deploy.yaml in your current directory.
 
- ![preview](Images/nginx-deploy_yaml.png)
+ ![preview](images/nginx-deploy_yaml.png)
 
   Step 2: Edit the File to Update Labels
 
@@ -100,10 +100,10 @@ kubectl create deployment nginx \
  ```bash
     vi nginx-deploy.yaml
 ```
-! [preview] (Images/nginx_deploy_open.png)
+! [preview] (images/nginx_deploy_open.png)
 
 Replace the content with this (or just modify the existing fields):
-![preview](Images/content_replace.png)
+![preview](images/content_replace.png)
 **Save and exit**
  
  Step 3: Apply the Deployment
@@ -128,7 +128,7 @@ kubectl get pods --show-labels
   3. Labels like app=v1 and tier=backend
 
 
-![preview](Images/add_labels_to_deployment.png)
+![preview](images/add_labels_to_deployment.png)
 
 ### ✅ Task 2: Update the Image to nginx:1.23.4
 🔹 Step 6: Update the container image to a new version
@@ -136,7 +136,7 @@ kubectl get pods --show-labels
 ```bash
 kubectl set image deployment/nginx nginx=nginx:1.23.4
 ```
-![preview](Images/image_update.png)
+![preview](images/image_update.png)
 
 ✅ Verify:
 
@@ -144,7 +144,7 @@ kubectl set image deployment/nginx nginx=nginx:1.23.4
 kubectl rollout status deployment/nginx
 kubectl describe deployment nginx | grep Image
 ```
-![preview](Images/status_updated.png)
+![preview](images/status_updated.png)
 
 ### 🔹 Task 3: Annotate the reason for change
 
@@ -170,7 +170,7 @@ You should see:
 ```bash
 Annotations:  kubernetes.io/change-cause: Pick up patch version
 ```
-![preview](Images/annotate.png)
+![preview](images/annotate.png)
 
 
 ### 🔹 Task 4: Scale to 5 replicas:
@@ -190,7 +190,7 @@ Check if all 5 pods are running:
 kubectl get pods
 ```
 You should see 5 nginx-xxxxx pods with the status Running.
-![preview](Images/scaleup_deployment_pods.png)
+![preview](images/scaleup_deployment_pods.png)
 
   ### 🔹 Task 5: View rollout history:
 
@@ -199,7 +199,7 @@ kubectl rollout history deployment nginx
 ```
 This command shows the revision history of the deployment, including past changes like image updates or scaling events.
 
-![preview](Images/rollout_history.png)
+![preview](images/rollout_history.png)
 
 ### 🔹 Task 6: Roll back to revision 1:
 
@@ -212,7 +212,7 @@ kubectl rollout undo deployment nginx --to-revision=1
 kubectl describe deployment nginx | grep Image
 kubectl get pods
 ```
-![preview](Images/roll_back_to_revision.png)
+![preview](images/roll_back_to_revision.png)
 
 
 ## 🛠️ **PART 3: YAML Troubleshooting**
@@ -307,7 +307,7 @@ Then apply again:
 kubectl apply -f fixed-deploy.yaml
 kubectl get deployments
 ```
-![preview](Images/broken_yaml.png)
+![preview](images/broken_yaml.png)
 
 
 ## 🧠 **PART 4: Document & Share Learnings**

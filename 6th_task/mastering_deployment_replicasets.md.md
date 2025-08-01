@@ -19,7 +19,7 @@ To maintain pod availability — if a pod crashes or is deleted, the ReplicaSet 
 ```bash
 kubectl create rs nginx-rs --image=nginx --replicas=3
 ```
-![preview](images/create_replicas1.png)
+![Preview](images/create_replicas1.png)
 
 *You're getting this error because `ReplicaSet (rs)` does not support the `--image` flag with `kubectl create`.*
 
@@ -29,7 +29,7 @@ kubectl create rs nginx-rs --image=nginx --replicas=3
 ```bash
  kubectl create deployment nginx-deployment --image=nginx --replicas=3
  ```
- ![preview](images/create_replicas3_2.png)
+ ![Preview](images/create_replicas3_2.png)
 
   **Task 2: Update the ReplicaSet YAML to 4 replicas**:
 
@@ -57,8 +57,8 @@ kubectl apply -f nginx-rs.yaml
 ```bash
 kubectl get rs
 ```
-![preview](images/edit_replicas_file_from3to4.png)
-![preview](images/replicas_4.png) 
+![Preview](images/edit_replicas_file_from3to4.png)
+![Preview](images/replicas_4.png) 
 
 ### 🔹 Task 3: Scale to 6 replicas via command line:
 
